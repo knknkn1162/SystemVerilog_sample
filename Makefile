@@ -1,8 +1,9 @@
 VLOGC=iverilog
+SIM=vvp
 OPTION=-g2005-sv
 MODULES=hello
 
-.PHONY : clean
+.PHONY : clean all
 
 all: $(MODULES)
 
@@ -10,4 +11,4 @@ all: $(MODULES)
 	$(VLOGC) $(OPTION) -o $* $<
 
 clean:
-	git ls-files --others --ignored --exclude-standard | xargs rm -rf
+	git ls-files --others --ignored --exclude-standard | xargs rm -rfv
